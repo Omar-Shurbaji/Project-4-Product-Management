@@ -1,0 +1,252 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+html {
+    scroll-behavior: smooth;
+}
+body { 
+    background-color: #111;
+    color: white;
+    font-family: 'DM Sans', sans-serif;
+    cursor: context-menu;
+}
+.container {
+    width: 80%;
+    margin: 50px auto;
+}
+.container .text {
+    text-align: center;
+    margin: 50px;
+}
+.container .text h2 {
+    font-size: 35px;
+    margin: 20px;
+}
+.container .text p {
+    font-size: 30px;
+}
+.container .inputs input {
+    width: 100%;
+    padding: 15px;
+    border-radius: 3px;
+    margin: 4px;
+    background-color: #181717;
+    color: #eee;
+    font-size: 18px;
+    outline: none;
+    border: none;
+}
+.container .inputs input::placeholder {
+    color: #333;
+}
+.container .inputs input:focus {
+    outline: 1px solid #444;
+}
+.container .inputs .price input {
+    width: 20%;
+    padding: 15px;
+    border-radius: 3px;
+    margin: 4px;
+    background-color: #181717;
+    color: #eee;
+    font-size: 18px;
+    outline: none;
+    border: none;
+}
+.container .inputs .price input:focus {
+    outline: 1px solid #444;
+}
+.container .inputs .price small {
+    background-color: red;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 18px;
+    cursor: context-menu;
+    transition: 0.5s;
+}
+.container .inputs button {
+    width: 100%;
+    margin: 4px;
+    padding: 8px;
+    border-radius: 15px;
+    background-color: rgb(109, 4, 196);
+    color: white;
+    cursor: pointer;
+    font-size: 18px;
+    border: none;
+    transition: 0.4s;
+}
+.container .inputs button:hover {
+    background-color: rgb(57, 8, 97);
+    letter-spacing: 2px;
+}
+.container .outputs .searchblock input {
+    width: 100%;
+    padding: 15px;
+    border-radius: 3px;
+    margin: 4px;
+    background-color: #181717;
+    color: #eee;
+    font-size: 18px;
+    outline: none;
+    border: none;
+}
+.container .outputs .searchblock input::placeholder {
+    color: #333;
+}
+.container .outputs .searchblock input:focus {
+    outline: 1px solid #444;
+}
+.container .outputs .searchblock .btnsearch {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 -4px 0 0px;
+    gap: 5px;
+}
+.container .outputs .searchblock .btnsearch button {
+    width: 50%;
+    margin: 4px 0px 4px 4px;
+    padding: 8px;
+    border-radius: 15px;
+    background-color: rgb(109, 4, 196);
+    color: white;
+    cursor: pointer;
+    font-size: 18px;
+    border: none;
+    transition: 0.4s;
+}
+.container .outputs .searchblock .btnsearch button:hover {
+    background-color: rgb(57, 8, 97);
+    letter-spacing: 1px;
+}
+.deleteAll button {
+    width: 100%;
+    margin: 4px 0px 4px 4px;
+    padding: 8px;
+    border-radius: 15px;
+    background-color: rgb(109, 4, 196);
+    color: white;
+    cursor: pointer;
+    font-size: 18px;
+    border: none;
+    transition: 0.4s;
+}
+.deleteAll button:hover {
+    background-color: rgb(57, 8, 97);
+    letter-spacing: 1px;
+}
+.container .outputs table {
+    width: 100%;
+    margin: 15px 4px;
+    text-align: center;
+}
+.container .outputs table tbody {
+    position: relative;
+}
+.container .outputs table tbody tr th {
+    text-transform: uppercase;
+}
+.container .outputs table tbody tr td button {
+    margin: 5px -10px;
+    padding: 8px 25%;
+    border-radius: 15px;
+    background-color: rgb(109, 4, 196);
+    color: white;
+    cursor: pointer;
+    border: none;
+    transition: 0.2s;
+}
+.container .outputs table tbody tr td button:hover {
+    background-color: rgb(57, 8, 97);
+    transform: scaleX(0.9);
+}
+
+@media (max-width: 992px) {
+    .container .inputs .price input {
+        width: 19%;
+    }
+    .container .inputs .price small {
+        padding: 8px 8px;
+    }
+    .container .outputs table tbody tr td button {
+        padding: 8px 17%;
+    }
+}
+@media (max-width: 767px) {
+    .container .inputs .price {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    .container .inputs .price input {
+        width: 49%;
+        margin: 4px -4px 4px 4px;
+    }
+    .container .inputs .price small {
+        display: block;
+        margin: auto;
+        width: 40%;
+    }
+    .container .deleteAll button {
+        font-size: 12px;
+    }
+    .container table button,table tr {
+        font-size: 10px;
+    }
+    .container .inputs button {
+        font-size: 12px;
+    }
+    .container .inputs .price small {
+        font-size: 12px;
+    }
+    input::placeholder {
+        font-size: 12px;
+    }
+    .container .outputs .searchblock .btnsearch button  {
+        font-size: 10px;
+    }
+    .container .text h2 , .container .text p{
+        font-size: 20px;
+    }
+}
+@media (max-width: 507px) {
+    .container .deleteAll button {
+        font-size: 10px;
+    }
+    .container table button {
+        font-size: 5px;
+    }
+    .container table tr {
+        font-size: 6px;
+    }
+    .container .inputs button {
+        font-size: 10px;
+    }
+    .container .inputs .price small {
+        font-size: 10px;
+    }
+    input::placeholder {
+        font-size: 12px;
+    }
+    .container .text h2 {
+        font-size: 15px;
+    }
+    .container .text p {
+        font-size: 15px;
+        margin: 20px -20px;
+    }
+    .container .inputs input {
+        padding: 9px;
+        font-size: 12px;
+    }
+    .container .inputs .price input {
+        padding: 9px;
+        font-size: 12px;
+    }
+    .container .outputs .searchblock input {
+        padding: 9px;
+        font-size: 12px;
+    }
+}
