@@ -143,6 +143,9 @@ function deleteAll() {
     taxes.value = '';
     discount.value = '';
     category.value = '';
+    total.innerHTML = "Total:";
+    total.style.backgroundColor = "red";
+    count.style.display = "block";
     submit.innerHTML = "Create";
 }
 
