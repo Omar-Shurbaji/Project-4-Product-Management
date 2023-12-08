@@ -114,7 +114,6 @@ function showData() {
             <td><button onclick="deleteData(${i})" id="delete">Delete</button></td>
         </tr>`;
     }
-    console.log(document.getElementById("tbody"));
     document.getElementById("tbody").innerHTML = table;
     let btnDelete = document.querySelector(".deleteAll");
     if (dataTotal.length > 0) {
@@ -138,6 +137,13 @@ function deleteAll() {
     dataTotal= [];
     localStorage.product = JSON.stringify(dataTotal);
     showData();
+    title.value = '';
+    price.value = '';
+    ads.value = '';
+    taxes.value = '';
+    discount.value = '';
+    category.value = '';
+    submit.innerHTML = "Create";
 }
 
 
@@ -238,5 +244,4 @@ search.addEventListener('input', function() {
     if (search.value == '') {
         showData();
     }
-    
-})
+});
