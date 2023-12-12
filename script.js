@@ -114,6 +114,7 @@ function showData() {
             <td><button onclick="deleteData(${i})" id="delete">Delete</button></td>
         </tr>`;
     }
+    console.log(document.getElementById("tbody"));
     document.getElementById("tbody").innerHTML = table;
     let btnDelete = document.querySelector(".deleteAll");
     if (dataTotal.length > 0) {
@@ -137,16 +138,6 @@ function deleteAll() {
     dataTotal= [];
     localStorage.product = JSON.stringify(dataTotal);
     showData();
-    title.value = '';
-    price.value = '';
-    ads.value = '';
-    taxes.value = '';
-    discount.value = '';
-    category.value = '';
-    total.innerHTML = "Total:";
-    total.style.backgroundColor = "red";
-    count.style.display = "block";
-    submit.innerHTML = "Create";
 }
 
 
@@ -212,8 +203,6 @@ searchByTitle.addEventListener('click', function() {
                 <td><button onclick="deleteData(${i})" id="delete">Delete</button></td>
             </tr>`;
         }
-        let tr = document.querySelector(".container .outputs table #tbody tr");
-        tr.style.cssText = "top: 100%";
         document.getElementById("tbody").innerHTML = table;
     }
 })
@@ -222,6 +211,7 @@ searchByCategory.addEventListener('click', function() {
     let searchValue = search.value;
     let table = '';
     for (let i = 0 ; i < dataTotal.length ; i++) {
+        console.log(dataTotal[i].category.includes(searchValue));
         if (dataTotal[i].category.includes(searchValue)) {
             table += `
             <tr> 
@@ -237,14 +227,13 @@ searchByCategory.addEventListener('click', function() {
                 <td><button onclick="deleteData(${i})" id="delete">Delete</button></td>
             </tr>`;
         }
-        let tr = document.querySelector(".container .outputs table #tbody tr");
-        tr.style.cssText = "top: 100%";
-        document.getElementById("tbody").innerHTML = table;
     }
+    document.getElementById("tbody").innerHTML = table;
 })
 
 search.addEventListener('input', function() {
     if (search.value == '') {
         showData();
     }
+    
 });
